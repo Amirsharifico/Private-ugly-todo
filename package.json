@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Amirsharifico/UserBase-Toutorial#readme",
   "dependencies": {
-    "serve-static": "^1.15.0"
+    "serve-static": "^1.15.0",
+    "static-server": "^2.2.1"
   }
 }
