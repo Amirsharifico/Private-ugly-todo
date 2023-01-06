@@ -3,7 +3,7 @@
 // const path = require('path');
 
 // app.use(express.static('./src'))
-
+var serveStatic = require('serve-static')
 
 userbase
   .init({ appId: "94c3fd59-b356-45c7-97ff-94e00733d977" })

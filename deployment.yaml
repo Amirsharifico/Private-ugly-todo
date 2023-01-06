@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: privateuglytodo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: privateuglytodo
+  template:
+    metadata:
+      labels:
+        app: privateuglytodo
+    spec:
+      containers:
+      - name: privateuglytodo
+        image: a5hkian/privateuglytodo
+        resources:
+          limits:
+            memory: "356Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: privateuglytodo
+spec:
+  type: LoadBalancer
+  selector:
+   app: privateuglytodo
+  ports:
+  - port: 3001
+    targetPort: 3000
+    protocol: TCP
